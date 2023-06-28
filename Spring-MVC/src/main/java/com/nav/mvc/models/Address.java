@@ -1,5 +1,8 @@
 package com.nav.mvc.models;
 
+import lombok.Data;
+
+@Data
 public class Address {
 	
 	private Integer addressId;

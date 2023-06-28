@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Header Fragment</title>
+  </head>
+  <body>
+    <header th:fragment="myHeader">
+      <div class="logo">
+        <img src="logo.png" alt="Logo">
+      </div>
+     <!--  <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav> -->
+      <nav th:fragment="navbar" class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" th:href="@{/}">Student Management System</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a class="nav-link" th:href="@{/student}">Student List</a></li>
+
+            <li><a class="nav-link" th:href="@{/subjects}">Subjects</a></li>
+
+            <li><a class="nav-link" th:href="@{/teachers}">Teachers</a></li>    
+        </ul>
+    </div>    
+</nav>
+      
+    </header>
+  </body>
+</html>
