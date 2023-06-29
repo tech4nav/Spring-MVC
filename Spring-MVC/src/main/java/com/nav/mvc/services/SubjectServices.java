@@ -2,6 +2,7 @@ package com.nav.mvc.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,12 @@ public List<Subject> listAllSubjects(){
 public Subject addNewSubject(Subject sub)
 {
 	return subJectRepository.save(sub);
+}
+
+public Subject findSubject(Integer id)
+{
+	Optional<Subject> sub=subJectRepository.findById(id);
+	return sub.get();
 }
 
 }

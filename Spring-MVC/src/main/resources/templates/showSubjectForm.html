@@ -1,12 +1,16 @@
-<!DOCTYPE HTML>
-<html xmlns:th="https://www.thymeleaf.org">
-<head> 
-    <title>Getting Started: Handling Form Submission</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link th:href="@{/css/horizontal-menu.css}" rel="stylesheet" />
+<link th:href="@{/css/layout.css}" rel="stylesheet" />
 </head>
 <body>
-	<h1>Form</h1>
-    <form action="#" th:action="@{/addSubject}" th:object="${subject}" method="post">
+	 <div id="headerHolder">
+     	<div th:replace="~{fragments/header :: myHeader}"></div>
+     </div>
+     <div id="bodyHolder">
+     	<form action="#" th:action="@{/addSubject}" th:object="${subject}" method="post">
 	    <table>
 		    <tr>
 		    	<td>Subject Name:</td>
@@ -23,5 +27,9 @@
 		    </tr>
 	    </table>
     </form>
+     </div>
+     <div id="footerHolder">
+    	<div th:replace="~{fragments/footer :: myFooter}"></div>
+    </div>
 </body>
 </html>

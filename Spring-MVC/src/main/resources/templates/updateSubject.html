@@ -10,12 +10,14 @@
      	<div th:replace="~{fragments/header :: myHeader}"></div>
      </div>
      <div id="bodyHolder">
-     	<table>
+     	<!-- <form action="#" th:action="@{/addSubject}" th:object="${subject}" method="post"> -->
+	    <table>
 		     <thead>
 			    <tr>
 			   		<th>Subject id</th>
 			    	<th>Subject Name</th>
 			    	<th>Subject Description</th>
+			    	<th>Action</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -23,9 +25,11 @@
             <td><span th:text="${sub.id}"> Title </span></td>
             <td><span th:text="${sub.subjectName}"> Author </span></td>
             <td><span th:text="${sub.subjectDesc}"> Author </span></td>
-        </tr>
+            <td><a  th:href="@{'/updateSubject/'+${sub.id}}">Update</a><a  th:href="@{'/deleteSubject/'+${sub.id}}">Delete</a></td>
+        </tr> 
 		    </tbody>
 	    </table>
+   <!--  </form> -->
      </div>
      <div id="footerHolder">
     	<div th:replace="~{fragments/footer :: myFooter}"></div>
