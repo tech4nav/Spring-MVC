@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Form</h1>
+    <!-- <form action="#" th:action="@{/addSubject}" th:object="${subject}" method="post"> -->
+	    <table>
+		     <thead>
+			    <tr>
+			   		<th>Subject id</th>
+			    	<th>Subject Name</th>
+			    	<th>Subject Description</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+		   <tr th:each="sub : ${listSubject}">
+            <td><span th:text="${sub.id}"> Title </span></td>
+            <td><span th:text="${sub.subjectName}"> Author </span></td>
+            <td><span th:text="${sub.subjectDesc}"> Author </span></td>
+        </tr>
+		    </tbody>
+	    </table>
+   <!--  </form> -->
+</body>
+</html>

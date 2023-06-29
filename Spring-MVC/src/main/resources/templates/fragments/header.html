@@ -4,32 +4,50 @@
     <title>Header Fragment</title>
   </head>
   <body>
-    <header th:fragment="myHeader">
+    <div class="myHeader" th:fragment="myHeader">
       <div class="logo">
-        <img src="logo.png" alt="Logo">
+        <img th:src = "@{/images/sun.jpg}" alt="logo" width="60px"/>
       </div>
-     <!--  <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </nav> -->
-      <nav th:fragment="navbar" class="navbar navbar-expand-md bg-dark navbar-dark">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" th:href="@{/}">Student Management System</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a class="nav-link" th:href="@{/student}">Student List</a></li>
 
-            <li><a class="nav-link" th:href="@{/subjects}">Subjects</a></li>
+		<!-- The navigation menu -->
+<div class="navbar">
+  <a  th:href="@{/}">Home</a>
+  <div class="subnav">
+    <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a  th:href="@{/}">School</a>
+      <a  th:href="@{/}">Placements</a>
+      <a  th:href="@{/}">Careers</a>
+    </div>
+  </div>
+  <div class="subnav">
+    <button class="subnavbtn">Students <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a  th:href="@{/}">Add Student</a>
+      <a  th:href="@{/}">View Students</a>
+    </div>
+  </div>
+  <div class="subnav">
+    <button class="subnavbtn">Subjects <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a  th:href="@{/showSubjectForm}">Add Subjects</a>
+      <a  th:href="@{/subjects}">View Subjects</a>
+      <a  th:href="@{/removeSubject}">Remove Subject</a>
+    </div>
+  </div>
+    <div class="subnav">
+    <button class="subnavbtn">Teachers <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a  th:href="@{/}">Add Teacher</a>
+      <a  th:href="@{/}">View Teachers</a>
+      <a  th:href="@{/}">Remove Teacher</a>
+    </div>
+  </div>
+  <a  th:href="@{/}">Contact</a>
+</div>
+	
 
-            <li><a class="nav-link" th:href="@{/teachers}">Teachers</a></li>    
-        </ul>
-    </div>    
-</nav>
       
-    </header>
+    </div>
   </body>
 </html>
