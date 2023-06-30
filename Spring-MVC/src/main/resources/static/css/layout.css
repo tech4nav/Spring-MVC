@@ -1,6 +1,18 @@
 #bodyHolder {
 	width:100%;
+	margin-top: 25px;
+    border: 1px solid;
+    min-height: 350px;
 }
 #footerHolder{
 	width:100%;
+}
+
+table, tr, td, th {
+	border: 1px solid;
+}
+
+td, th {
+	margin-left:5px;
+	margin-right:5px;
 }
