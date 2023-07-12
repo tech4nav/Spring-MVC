@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link th:href="@{/css/horizontal-menu.css}" rel="stylesheet" />
+<link th:href="@{/css/layout.css}" rel="stylesheet" />
+</head>
+<body>
+	 <div id="headerHolder">
+     	<div th:replace="~{fragments/header :: myHeader}"></div>
+     </div>
+     <div id="bodyHolder">
+     	<table>
+		     <thead>
+			    <tr>
+			   		<th>Registration Number</th>
+			    	<th>Student Name</th>
+			    	<th>Father's Name</th>
+			    	<th>Mother's Name</th>
+			    	<th>DoB</th>
+			    	<th>Address Line 1</th>
+			    	<th>Address Line 2</th>
+			    	<th>City</th>
+			    	<th>Postcode</th>
+			    	<th>State</th>
+			    	<th>Phone Number</th>
+			    	<th>Email</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+		   <tr th:each="std : ${listStudent}">
+            <td><span th:text="${std.registrationNumber}"> Title </span></td>
+            <td><span th:text="${std.name}"> Author </span></td>
+            <td><span th:text="${std.fatherName}"> Author </span></td>
+            <td><span th:text="${std.motherName}"> Author </span></td>
+            <td><span th:text="${std.dob}"> Author </span></td>
+            <td><span th:text="${std.lstAddr[0].addressLine1}"> Author </span></td>
+            <td><span th:text="${std.lstAddr[0].addressLine2}"> Author </span></td>
+            <td><span th:text="${std.lstAddr[0].city}"> Author </span></td>
+            <td><span th:text="${std.lstAddr[0].postCode}"> Author </span></td>
+            <td><span th:text="${std.lstAddr[0].state}"> Author </span></td>
+            <td><span th:text="${std.lstAddr[0].phoneNumber}"> Author </span></td>
+            <td><span th:text="${std.lstAddr[0].email}"> Author </span></td>
+        </tr>
+		    </tbody>
+	    </table>
+     </div>
+     <div id="footerHolder">
+    	<div th:replace="~{fragments/footer :: myFooter}"></div>
+    </div>
+</body>
+</html>
+

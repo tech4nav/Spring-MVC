@@ -1,5 +1,9 @@
 package com.nav.mvc.repositories;
 
-public interface StudentRepository /* extends CrudRepository<Student, Integer> */{
+import org.springframework.data.repository.CrudRepository;
+
+import com.nav.mvc.models.Student;
+
+public interface StudentRepository  extends CrudRepository<Student, Integer> {
 
 }

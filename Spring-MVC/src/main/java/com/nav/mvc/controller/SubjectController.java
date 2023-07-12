@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.nav.mvc.models.Student;
 import com.nav.mvc.models.Subject;
 import com.nav.mvc.services.SubjectServices;
 
@@ -46,11 +45,18 @@ public class SubjectController {
 		return "updateSubject";
 	}
 	
-	@GetMapping("/updateSubject/{id}")
+	@PostMapping("/updateSubject/{id}")
 	public String updateSubjects(@PathVariable Integer id, Model model)
 	{
-		model.addAttribute("subject", subjectService.findSubject(id));
+		model.addAttribute("subject", subjectService.updateSubject(id));
 		return "showSubjectForm";
+	}
+	
+	@GetMapping("/deleteSubject/{id}")
+	public String deleteSubjects(@PathVariable Integer id, Model model)
+	{
+		subjectService.deleteSubject(id);
+		return updateSubject(  model);
 	}
 
 }
