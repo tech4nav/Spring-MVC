@@ -5,12 +5,32 @@
 <link th:href="@{/css/horizontal-menu.css}" rel="stylesheet" />
 <link th:href="@{/css/layout.css}" rel="stylesheet" />
 </head>
+<style>
+#bodyHolder{
+	 height: 100vh;
+    width: 100vw;
+}
+#banner{
+    height: 70vh;
+    width: 97.6vw;
+    }
+</style>
 <body>
 	 <div id="headerHolder">
      	<div th:replace="~{fragments/header :: myHeader}"></div>
      </div>
      <div id="bodyHolder">
-     	home
+     	<section id="banner">
+			<img th:src = "@{/images/2.jpg}" alt="banner" />
+		</section>
+		
+		<section id="about">
+		
+		</section>
+		
+		<section id="contact">
+		
+		</section>
      </div>
      <div id="footerHolder">
     	<div th:replace="~{fragments/footer :: myFooter}"></div>
