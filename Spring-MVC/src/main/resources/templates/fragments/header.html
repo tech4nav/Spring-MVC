@@ -44,7 +44,7 @@
     </div>
   </div>
   <a  th:href="@{/}">Contact</a>
-  <div sec:authorize="hasRole('ADMIN')">
+  <div sec:authorize="hasAuthority('ADMIN')">
   <div class="subnav">
     <button class="subnavbtn">Add Master Data <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
