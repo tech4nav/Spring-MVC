@@ -35,7 +35,7 @@
       <a  th:href="@{/admin/updateSubject}">Remove Subject</a>
     </div>
   </div>
-    <div class="subnav">
+  <div class="subnav">
     <button class="subnavbtn">Staff <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
       <a  th:href="@{/admin/addStaffForm}">Add Staff</a>
@@ -44,10 +44,19 @@
     </div>
   </div>
   <a  th:href="@{/}">Contact</a>
-  
-  	<div sec:authorize="isAuthenticated()">
+  <div sec:authorize="hasRole('ADMIN')">
+  <div class="subnav">
+    <button class="subnavbtn">Add Master Data <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+     <a  th:href="@{/admin/roles}">List Roles</a>
+      <a  th:href="@{/admin/addRole}">Add Roles</a>
+      <a  th:href="@{/admin/updateRole}">Update Roles</a>
+    </div>
+  </div>
+  </div>
+  	<div sec:authorize="isAuthenticated()" id="signoutHolder">
 <h1 th:inline="text">Hello <span th:remove="tag" sec:authentication="name">thymeleaf</span>!</h1>
-        <form th:action="@{/logout}" method="post">
+        <form th:action="@{/logout}" method="post" id="logoutForm">
             <input type="submit" value="Sign Out"/>
         </form>
   </div>

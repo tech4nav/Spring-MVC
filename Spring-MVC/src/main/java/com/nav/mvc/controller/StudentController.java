@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.nav.mvc.models.Student;
+import com.nav.mvc.services.MasterDataServices;
 import com.nav.mvc.services.StudentService;
 
 @Controller
@@ -16,8 +17,12 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 	
+	@Autowired
+	private MasterDataServices masterDataServices;
+	
 	@GetMapping("/admin/showStudentForm")
 	public String showStodentForm(Model model) {
+		model.addAttribute("roleList", masterDataServices.listAllRoles());
 		model.addAttribute("student", new Student());
 		return "student/showStudentForm";
 	}

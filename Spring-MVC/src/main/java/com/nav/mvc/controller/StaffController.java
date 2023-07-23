@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.nav.mvc.models.Staff;
+import com.nav.mvc.services.MasterDataServices;
 import com.nav.mvc.services.StaffService;
 
 @Controller
@@ -15,9 +16,12 @@ public class StaffController {
 	
 	@Autowired
 	private StaffService staffService;
+	@Autowired
+	private MasterDataServices masterDataServices;
 	
 	@GetMapping("/admin/addStaffForm")
 	public String showStaffForm(Model model) {
+		model.addAttribute("roleList", masterDataServices.listAllRoles());
 		model.addAttribute("staff", new Staff());
 		return "staff/showStaffForm";
 	}

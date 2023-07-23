@@ -24,6 +24,21 @@
 		    	<td>Mother's Name:</td>
 		    	<td><input type="text" th:field="*{motherName}" /></td>
 		    </tr>
+		     <tr>
+		    	<td>Role</td>
+		    	<td>
+			    	<select th:field="*{role}" class="form-control" id="roleList">
+					    <option value="0">select option</option>
+					    <option th:each="option : ${roleList}" th:value="${option.roleName}" th:text="${option.roleName}"></option>
+					</select>
+				</td>
+		    </tr>
+		    <tr>
+		    	<td>Username</td>
+		    	<td><input type="text" th:field="*{userName}" /></td>
+		    	<td>Password</td>
+		    	<td><input type="text" th:field="*{password}" /></td>
+		    </tr>
 		    <tr>
 		    	<td>Address Line1</td>
 		    	<td><input type="text" th:field="*{lstAddr[0].addressLine1}" /></td>

@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="role", 
+@DiscriminatorColumn(name="person_type", 
 discriminatorType = DiscriminatorType.STRING)
 public class Person {
 	
@@ -32,6 +32,9 @@ public class Person {
 	private String fatherName;
 	private String motherName;
 	private Date dob;
+	private String userName;
+	private String password;
+	private String role;
 	
 	@OneToMany(mappedBy="person")
 	private List<Address> lstAddr;

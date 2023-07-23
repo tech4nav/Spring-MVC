@@ -81,3 +81,14 @@
 .subnav:hover .subnav-content {
   display: block;
 }
+
+#signoutHolder {
+	width: 280px;
+    float: right;
+    display: flex;
+  }
+  
+ #logoutForm{
+ 	margin-top: 30px;
+    margin-left: 15px;
+ }
