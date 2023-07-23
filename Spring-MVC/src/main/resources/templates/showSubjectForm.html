@@ -10,7 +10,8 @@
      	<div th:replace="~{fragments/header :: myHeader}"></div>
      </div>
      <div id="bodyHolder">
-     	<form action="#" th:action="@{/addSubject}" th:object="${subject}" method="post">
+     	<form action="#" th:action="@{/admin/addSubject}" th:object="${subject}" method="post">
+     	<input type="hidden" th:field="*{id}" id="subjectId">
 	    <table>
 		    <tr>
 		    	<td>Subject Name:</td>

@@ -34,6 +34,7 @@ public Subject findSubject(Integer id)
 	Optional<Subject> sub=subJectRepository.findById(id);
 	return sub.get();
 }
+
 @Transactional
 public Subject updateSubject(Integer id)
 {

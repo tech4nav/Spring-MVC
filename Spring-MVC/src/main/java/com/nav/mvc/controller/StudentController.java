@@ -16,7 +16,7 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 	
-	@GetMapping("/showStudentForm")
+	@GetMapping("/admin/showStudentForm")
 	public String showStodentForm(Model model) {
 		model.addAttribute("student", new Student());
 		return "student/showStudentForm";
@@ -29,7 +29,7 @@ public class StudentController {
 		return "student/viewStudents";
 	}
 	
-	@PostMapping("/addStudent")
+	@PostMapping("/admin/addStudent")
 	public String AddSubject(@ModelAttribute Student student, Model model)
 	{
 		studentService.addNewStudent(student);

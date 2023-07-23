@@ -16,7 +16,7 @@ public class StaffController {
 	@Autowired
 	private StaffService staffService;
 	
-	@GetMapping("/addStaffForm")
+	@GetMapping("/admin/addStaffForm")
 	public String showStaffForm(Model model) {
 		model.addAttribute("staff", new Staff());
 		return "staff/showStaffForm";
@@ -29,7 +29,7 @@ public class StaffController {
 		return "staff/viewStaff";
 	}
 	
-	@PostMapping("/addStaff")
+	@PostMapping("/admin/addStaff")
 	public String AddSubject(@ModelAttribute Staff staff, Model model)
 	{
 		staffService.addNewStaff(staff);

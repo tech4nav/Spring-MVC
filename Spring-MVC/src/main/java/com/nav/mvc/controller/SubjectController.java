@@ -24,35 +24,35 @@ public class SubjectController {
 		return "listSubject";
 	}
 	
-	@GetMapping("/showSubjectForm")
+	@GetMapping("/admin/showSubjectForm")
 	public String showAddSubject(Model model)
 	{
 		model.addAttribute("subject", new Subject());
 		return "showSubjectForm";
 	}
 	
-	@PostMapping("/addSubject")
+	@PostMapping("/admin/addSubject")
 	public String AddSubject(@ModelAttribute Subject subject, Model model)
 	{
 		subjectService.addNewSubject(subject);
 		return getAllSubjects(model);
 	}
 	
-	@GetMapping("/updateSubject")
+	@GetMapping("/admin/updateSubject")
 	public String updateSubject( Model model)
 	{
 		getAllSubjects(model);
 		return "updateSubject";
 	}
 	
-	@PostMapping("/updateSubject/{id}")
+	@GetMapping("/admin/updateSubject/{id}")
 	public String updateSubjects(@PathVariable Integer id, Model model)
 	{
-		model.addAttribute("subject", subjectService.updateSubject(id));
+		model.addAttribute("subject", subjectService.findSubject(id));
 		return "showSubjectForm";
 	}
 	
-	@GetMapping("/deleteSubject/{id}")
+	@GetMapping("/admin/deleteSubject/{id}")
 	public String deleteSubjects(@PathVariable Integer id, Model model)
 	{
 		subjectService.deleteSubject(id);

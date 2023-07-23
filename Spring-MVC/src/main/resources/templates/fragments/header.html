@@ -23,31 +23,37 @@
   <div class="subnav">
     <button class="subnavbtn">Students <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a  th:href="@{/showStudentForm}">Add Student</a>
+      <a  th:href="@{/admin/showStudentForm}">Add Student</a>
       <a  th:href="@{/students}">View Students</a>
     </div>
   </div>
   <div class="subnav">
     <button class="subnavbtn">Subjects <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a  th:href="@{/showSubjectForm}">Add Subjects</a>
+      <a  th:href="@{/admin/showSubjectForm}">Add Subjects</a>
       <a  th:href="@{/subjects}">View Subjects</a>
-      <a  th:href="@{/updateSubject}">Remove Subject</a>
+      <a  th:href="@{/admin/updateSubject}">Remove Subject</a>
     </div>
   </div>
     <div class="subnav">
     <button class="subnavbtn">Staff <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a  th:href="@{/addStaffForm}">Add Staff</a>
+      <a  th:href="@{/admin/addStaffForm}">Add Staff</a>
       <a  th:href="@{/staff}">View Staff</a>
-      <a  th:href="@{/updateStaff}">Remove Staff</a>
+      <a  th:href="@{/admin/updateStaff}">Remove Staff</a>
     </div>
   </div>
   <a  th:href="@{/}">Contact</a>
+  
+  	<div sec:authorize="isAuthenticated()">
+<h1 th:inline="text">Hello <span th:remove="tag" sec:authentication="name">thymeleaf</span>!</h1>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+  </div>
 </div>
 	
-
-      
+    
     </div>
   </body>
 </html>

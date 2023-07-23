@@ -25,7 +25,7 @@
             <td><span th:text="${sub.id}"> Title </span></td>
             <td><span th:text="${sub.subjectName}"> Author </span></td>
             <td><span th:text="${sub.subjectDesc}"> Author </span></td>
-            <td><a  th:href="@{'/updateSubject/'+${sub.id}}">Update</a><a  th:href="@{'/deleteSubject/'+${sub.id}}">Delete</a></td>
+            <td><a  th:href="@{'/admin/updateSubject/'+${sub.id}}">Update</a><a  th:href="@{'/admin/deleteSubject/'+${sub.id}}">Delete</a></td>
         </tr> 
 		    </tbody>
 	    </table>
