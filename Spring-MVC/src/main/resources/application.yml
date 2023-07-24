@@ -11,8 +11,8 @@ spring:
            - profile
                     
          facebook:
-          clientId: YOUR_FACEBOOK_APP_CLIENT_ID
-          clientSecret: YOUR_FACEBOOK_APP_SECRET_KEY
+          clientId: 405587784763894
+          clientSecret: 1f4f4ef50ee3c88ee868f35321c1d524
           scope:
            - email
            - public_profile

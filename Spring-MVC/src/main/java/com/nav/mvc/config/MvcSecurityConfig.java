@@ -13,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 import com.nav.mvc.config.security.CustomUserDetailsService;
+import com.nav.mvc.config.security.OAuth2.CustomOAuth2UserService;
 
 @Configuration
 @EnableWebSecurity
@@ -43,28 +44,28 @@ public class MvcSecurityConfig  {
     
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http
-			.authorizeHttpRequests((requests) -> requests
-				.requestMatchers("/", "/home","/css/**","/js/**", "/images/**",
-                         "/").permitAll()
-				.requestMatchers("/user/**").hasAuthority("USER")
-				.requestMatchers("/admin/**").hasAuthority("ADMIN")
-						/*
-						 * .requestMatchers("/user/**").hasRole("USER")
-						 * .requestMatchers("/admin/**").hasRole("ADMIN")
-						 */
-				.anyRequest().authenticated()
-			)
-			.formLogin((form) -> form
-				.loginPage("/login")
-				.permitAll()
-			)
-			.logout((logout) -> logout.permitAll());
+        http
+                .authorizeHttpRequests((requests) -> requests
+                                .requestMatchers("/", "/home", "/css/**", "/js/**", "/images/**",
+                                        "/").permitAll()
+                                .requestMatchers("/user/**").hasAuthority("USER")
+                                .requestMatchers("/admin/**").hasAuthority("ADMIN")
+                                .anyRequest().authenticated()
+                ).oauth2Login(login -> login
+                .loginPage("/login"))
+                .formLogin((form) -> form
+                                .loginPage("/login")
+                                .permitAll()
+                )
+                .logout((logout) -> logout.permitAll());
 
 		return http.build();
 	}
 
 	
+	  @Autowired 
+	  private CustomOAuth2UserService oauth2UserService;
+	 
 	/*
 	 * @Bean public UserDetailsService userDetailsService() { UserDetails user =
 	 * User.withDefaultPasswordEncoder() .username("user") .password("pwd")
