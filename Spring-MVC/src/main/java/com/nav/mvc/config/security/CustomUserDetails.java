@@ -1,4 +1,4 @@
-package com.nav.mvc.security.config;
+package com.nav.mvc.config.security;
 
 import java.util.Collection;
 import java.util.Collections;

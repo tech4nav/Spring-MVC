@@ -86,6 +86,7 @@
 	width: 280px;
     float: right;
     display: flex;
+    color: white;
   }
   
  #logoutForm{
