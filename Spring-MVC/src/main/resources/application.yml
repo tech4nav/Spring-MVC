@@ -16,3 +16,13 @@ spring:
           scope:
            - email
            - public_profile
+           - user_hometown
+           - user_birthday
+           - user_gender
+           - user_link
+           - user_friends
+           - user_location
+           - user_likes
+           - user_photos
+           - user_videos
+           - user_posts
